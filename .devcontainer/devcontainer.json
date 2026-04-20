@@ -1,7 +1,10 @@
 {
   "image": "mcr.microsoft.com/vscode/devcontainers/python:trixie",
 
+  "postStartCommand": "[ -x /usr/local/bin/ollama ] && ollama serve",
   "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+  "forwardPorts": [ 11434 ],
 
   "customizations": {
     "vscode": {
