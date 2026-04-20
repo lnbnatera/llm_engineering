@@ -3,6 +3,7 @@
 
   "postStartCommand": "[ -x /usr/local/bin/ollama ] && ollama serve",
   "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "shutdownAction": "none",
 
   "forwardPorts": [ 11434 ],
 
