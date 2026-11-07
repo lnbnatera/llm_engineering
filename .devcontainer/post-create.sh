@@ -23,8 +23,8 @@ else
 fi
 
 # Install llama models
-# ollama pull llama3.1:8b
-# ollama pull gemma3:12b
+ollama pull llama3.2
+ollama pull gemma3:4b
 
 # Install dependencies (only once)
 if [ ! -d ".venv" ]; then
@@ -46,5 +46,8 @@ if [ -f "uv.lock" ]; then
     echo ">> Checking lockfile consistency..."
     uv sync --frozen || uv sync
 fi
+
+# Install claude CLI
+curl -LsSf https://claude.ai/install.sh | bash
 
 echo "== Setup complete =="
